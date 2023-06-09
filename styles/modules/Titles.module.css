@@ -1,0 +1,18 @@
+/**************************
+  
+      BreadcrumbTitle
+
+***************************/
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.breadcrumb-link {
+
+}
+
+.active {
+  color: blue;
+}

@@ -1,0 +1,7 @@
+/* 기본 메뉴 */
+.menu {
+  background-color: blue;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+}

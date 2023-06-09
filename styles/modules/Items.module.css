@@ -1,0 +1,29 @@
+/**************************
+  
+      ProgressBarItems
+
+***************************/
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 16px;
+}
+
+/**************************
+  
+      BreadcrumbItems
+
+***************************/
+.breadcrumb {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
