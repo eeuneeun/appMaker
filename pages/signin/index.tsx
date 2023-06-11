@@ -2,11 +2,6 @@ import { LoginForm } from 'components/UI/organisms/form';
 import { LoginFormData } from 'types/login';
 
 export default function Signin() {
-  // const [formVal, setFormVal] = useState({
-  //   id: '',
-  //   pw: '',
-  // });
-
   function SubmitLoginInfo(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     console.log(e);

@@ -1,8 +1,11 @@
-@import url('./resources.css');@import url('./reset.css');@import url('./colors.css');/*************************
- 
+@import url('./resources.css');@import url('./reset.css');@import url('./colors.css');
+
+
+
+
 /*************************
 
- components
+        components
 
 **************************/
 /* login form */
@@ -19,7 +22,8 @@
 
 **************************/
 /* container */
-.wrap { width: 100%; height: 100vh; position: relative; overflow: auto; } 
+.wrap { width: 100%; min-width: 1200px; height: 100%; position: relative; overflow: auto; } 
+#__next{width: 1200px;height: 100%;}
 
 /*************************
  
@@ -37,21 +41,24 @@
     .rightnav ul li { width: 100%; height: 150px; border-bottom: 1px solid #ebebeb;} 
       .rightnav ul li a { width: 100%; height: 100%; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 17px; } 
 
-.leftnav { width: 150px; height: calc(100% - 50px); background: #fff; position: absolute; top: 50px; left: 0; color: #000; box-shadow: 2px 2px 12px 3px rgb(0, 0, 0, 0.2);} 
-  .leftnav ul { width: 100%; height: 100%; } 
-    .leftnav ul li { width: 100%; height: 100px; border-bottom: 1px solid #eee; } 
-      .leftnav ul li a { width: 100%; height: 100%; color: #000; display: flex; align-items: center; justify-content: center; font-size: 15px; } 
+.leftnav { width: 130px; height: calc(100% - 50px); background: #fff; position: absolute; top: 50px; left: 0; color: #000; box-shadow: 2px 2px 12px 3px rgb(0, 0, 0, 0.2);} 
+  .leftnav .menu-list { width: 100%; height: 100%; } 
+    .leftnav .menu-list li { width: 100%; height: 60px; border-bottom: 1px solid #eee; } 
+      .leftnav .menu-list li a { width: 100%; height: 100%; color: #000; display: flex; align-items: center; justify-content: flex-start; font-size: 15px; padding-left: 35px;} 
+      .leftnav .menu-list li a.page-link{background: url(/imgs/menu_pages_icon.svg) no-repeat left 10px center;}
+      .leftnav .menu-list li a.data-link{ background: url(/imgs/menu_datas_icon.svg) no-repeat left 10px center; background-size: 20px; }
+      .leftnav .menu-list li a.setting-link{background: url(/imgs/menu_settings_icon.svg) no-repeat left 10px center;}
 
 /*************************
  
            main
 
 **************************/
-.main { width: calc(100% - 500px); height: calc(100% - 50px); position: absolute; top: 50px; left: 150px; } 
+.main { width: calc(100% - 480px); height: calc(100% - 50px); position: absolute; top: 50px; left: 130px; } 
 
 /*************************
  
- 1. menu : page
+      1. menu : page
 
 **************************/
 .pageWrap { display: flex; align-items: center; justify-content: center; } 
@@ -59,21 +66,21 @@
 
 /**************************
  
- 2. menu : data
+      2. menu : data
 
 ***************************/
 .data { display: flex; align-items: center; justify-content: center; } 
 
 /**************************
  
- 3. menu : setting
+      3. menu : setting
 
 ***************************/
 .settings { display: flex; align-items: center; justify-content: center; } 
 
 /**************************
  
- 4. menu : function
+      4. menu : function
 
 ***************************/
 .function { display: flex; align-items: center; justify-content: center; } 
