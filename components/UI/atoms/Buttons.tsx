@@ -7,9 +7,9 @@ export default function Button() {
 }
 
 // @상단 헤더 좌측의 햄버거 버튼
-export function HamburgerButton() {
+export function HamburgerButton({ ...pageProps }) {
   return (
-    <button className={styles.ham}>
+    <button className={styles.ham} onClick={pageProps.onClick}>
       <span></span>
       <span></span>
       <span></span>

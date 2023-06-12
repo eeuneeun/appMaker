@@ -1,5 +1,5 @@
 import { HYDRATE } from 'next-redux-wrapper';
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { CaseReducer, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from 'store/storeConfig';
 import { ActionType } from 'typesafe-actions';
 
@@ -30,6 +30,10 @@ export const chkAdmin = (value: boolean) => {
 };
 
 type authActionType = ActionType<typeof chkLogin> | ActionType<typeof chkAdmin>;
+
+type State = boolean;
+const testLogin: CaseReducer<State, PayloadAction<boolean>> = (state, action) =>
+  (state = action.payload);
 
 export const authSlice = createSlice({
   name: 'auth',
