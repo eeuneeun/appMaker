@@ -1,10 +1,15 @@
 import { LoginForm } from 'components/UI/organisms/form';
 import { LoginFormData } from 'types/login';
+import { setIsLogin } from 'store/reducers/authSlice';
+import { useDispatch } from 'react-redux';
+import { useAppDispatch } from 'store/hookOfReducer';
 
 export default function Signin() {
-  function SubmitLoginInfo(e: React.FormEvent<HTMLFormElement>) {
+  const dispatch = useDispatch;
+
+  function submitLoginInfo(e: React.FormEvent<HTMLFormElement>): void {
     e.preventDefault();
-    console.log(e);
+    console.log('1');
   }
 
   const loginFormData: LoginFormData = {
@@ -29,7 +34,7 @@ export default function Signin() {
         text: '패스워드',
       },
     },
-    submitBtn: { text: '로그인', onClick: SubmitLoginInfo },
+    submitBtn: { text: '로그인', onClick: submitLoginInfo },
   };
 
   return (

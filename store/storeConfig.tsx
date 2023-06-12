@@ -12,13 +12,7 @@ import rootReducer from './rootReducer';
 import logger from 'redux-logger';
 import { MakeStore, createWrapper } from 'next-redux-wrapper';
 
-// 미들웨어 추가(필요 없을 경우 생략)
-const middleware = getDefaultMiddleware();
-console.log(process.env.NODE_ENV);
-
-if (process.env.NODE_ENV === 'development') {
-  middleware.push(logger);
-}
+const middleware = [...getDefaultMiddleware(), logger];
 
 // 리덕스 store 생성함수
 const store = configureStore({
@@ -34,3 +28,5 @@ export const wrapper = createWrapper<Store>(makeStore, {
   debug: process.env.NODE_ENV !== 'production',
 });
 export type RootState = ReturnType<typeof rootReducer>;
+
+export type AppDispatch = typeof store.dispatch;
