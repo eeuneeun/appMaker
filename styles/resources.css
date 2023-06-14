@@ -232,21 +232,29 @@
 
     /* edit-btn */
     .edit-btn{width: 100%; max-width: 155px; height: 140px; background-size: 100px !important; background-color: #f1f1f1 !important; display: flex; align-items: flex-start; justify-content: center;  border-radius: 5px; padding-top: 10px;}
-      
+    .page.edit-btn{height: 180px;background-size: 70px !important;}
+      /* pages */
+      .page.blank-btn{background: url(/imgs/page_blank_icon.png) no-repeat center bottom 15px;background-size: 145px !important;}
+      .page.appbar-btn{background: url(/imgs/page_appbar_icon.jpg) no-repeat center bottom 15px; }
+      .page.form-btn{background: url(/imgs/page_form_icon.jpg) no-repeat center bottom 15px;}
+      .page.tile-btn{background: url(/imgs/page_tile_icon.jpg) no-repeat center bottom 15px;}
+
+      /* components */
       .edit-text-btn{background: url(/imgs/edit_text_icon.png) no-repeat center bottom 15px;}
       .edit-btn-btn{background: url(/imgs/edit_btn_icon.png) no-repeat center bottom 15px;}
       .edit-list-btn{background: url(/imgs/edit_list_icon.png) no-repeat center bottom 15px;}
       .edit-appbar-btn{background: url(/imgs/edit_appbar_icon.png) no-repeat center bottom 15px;}
       .edit-img-btn{background: url(/imgs/edit_img_icon.png) no-repeat center bottom 15px;}
       .edit-form-btn{background: url(/imgs/edit_form_icon.png) no-repeat center bottom 15px;}
-
+      
+      
 
 
 .edit-menu { width: 100%;} 
     .edit-menu-header, 
     .edit-menu-footer{width: 100%; display: flex; justify-content: space-between; align-items: center;} 
     
-      .edit-menu-header{  position: relative; border-bottom: 1px solid #eee;}
+      .edit-menu-header{  position: relative; border-top: 1px solid #eee;border-bottom: 1px solid #eee;}
       .edit-menu-header::before{content: ''; display: inline-block; width: 5px; height: 100%; background: #eee; position: absolute; top: 0; left: 0;}
 
         .edit-menu-header button{width: 100%; height: 100%; padding: 10px 20px; display: flex; justify-content: space-between; font-weight: 700; color: #7f7f7f;}

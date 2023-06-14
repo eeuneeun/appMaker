@@ -3,25 +3,23 @@ import { CaseReducer, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from 'store/storeConfig';
 import { ActionType } from 'typesafe-actions';
 
-interface authState {
-  isLogin: boolean;
-  isAdmin: boolean;
+interface appPageState {
+  appPageList: [string];
 }
 
-const initialState: authState = {
-  isLogin: false,
-  isAdmin: false,
+const initialState: appPageState = {
+  appPageList: ['DefaultPage'],
 };
 
-export const authSlice = createSlice({
-  name: 'auth',
+export const appPageSlice = createSlice({
+  name: 'appPage',
   initialState,
   reducers: {
-    setIsLogin: (state: authState, action: PayloadAction<boolean>) => {
-      state.isLogin = action.payload;
+    addPage: (state: appPageState, action: PayloadAction<string>) => {
+      state.appPageList.push(action.payload);
     },
-    setIsAdmin: (state: authState, action: PayloadAction<boolean>) => {
-      state.isAdmin = action.payload;
+    deletePage: (state: appPageState, action: PayloadAction<number>) => {
+      state.appPageList.splice(action.payload, 0);
     },
   },
   extraReducers: {
@@ -36,11 +34,11 @@ export const authSlice = createSlice({
 
 export const asyncDispatchLogin = (state: any) => (dispatch: any) => {
   setTimeout(() => {
-    dispatch(setIsLogin(state));
+    dispatch(deletePage(state));
   }, 1000);
 };
 
-export const { setIsLogin, setIsAdmin } = authSlice.actions;
+export const { addPage, deletePage } = appPageSlice.actions;
 export const authSelector = (state: RootState) => state.auth;
 
-export default authSlice.reducer;
+export default appPageSlice.reducer;

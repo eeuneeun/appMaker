@@ -1,73 +1,107 @@
 import DefaultEditPanel from 'components/UI/templates/EditMenuPanel';
-import {
-  CompEditBtnArrProps,
-  EditMenuPanel,
-  EditPanelProps,
-} from 'types/components/edit';
+import { addPage } from 'store/reducers/appPageSlice';
+import { EditPanelProps } from 'types/components/edit';
+import { useAppDispatch } from 'store/storeHooks';
 
 export default function RightNav() {
-  // 버튼 리스트
-  const BtnArrData: CompEditBtnArrProps = {
-    items: [
-      {
-        text: '텍스트',
-        class: 'edit-text-btn',
-        onClick: () => {
-          console.log('click');
+  const dispatch = useAppDispatch();
+
+  // 페이지 패널
+  const pageEditPanelPropsData: EditPanelProps = {
+    EditMenuPanelData: {
+      headerText: '페이지',
+    },
+    BtnArrData: {
+      items: [
+        {
+          text: '빈 화면',
+          class: 'page blank-btn',
+          onClick: () => {
+            console.log('click');
+          },
         },
-      },
-      {
-        text: '버튼',
-        class: 'edit-btn-btn',
-        onClick: () => {
-          console.log('click');
+        {
+          text: '상단 앱 바',
+          class: 'page appbar-btn',
+          onClick: () => {
+            dispatch(addPage('DefaultPage'));
+          },
         },
-      },
-      {
-        text: '리스트',
-        class: 'edit-list-btn',
-        onClick: () => {
-          console.log('click');
+        {
+          text: '기본 폼 화면',
+          class: 'page form-btn',
+          onClick: () => {
+            console.log('click');
+          },
         },
-      },
-      {
-        text: '앱 상단 바',
-        class: 'edit-appbar-btn',
-        onClick: () => {
-          console.log('click');
+        {
+          text: '타일 리스트 화면',
+          class: 'page tile-btn',
+          onClick: () => {
+            console.log('click');
+          },
         },
-      },
-      {
-        text: '이미지',
-        class: 'edit-img-btn',
-        onClick: () => {
-          console.log('click');
-        },
-      },
-      {
-        text: '입력 폼',
-        class: 'edit-form-btn',
-        onClick: () => {
-          console.log('click');
-        },
-      },
-    ],
+      ],
+    },
   };
 
-  // 패널 요소
-  const EditMenuPanelData: EditMenuPanel = {
-    headerText: '컴포넌트',
-  };
-
-  // 최종 Props
-  const EditPanelPropsData: EditPanelProps = {
-    BtnArrData: BtnArrData,
-    EditMenuPanelData: EditMenuPanelData,
+  // 컴포넌트
+  const compoEditPanelPropsData: EditPanelProps = {
+    EditMenuPanelData: {
+      headerText: '컴포넌트',
+    },
+    BtnArrData: {
+      items: [
+        {
+          text: '텍스트',
+          class: 'edit-text-btn',
+          onClick: () => {
+            console.log('click');
+          },
+        },
+        {
+          text: '버튼',
+          class: 'edit-btn-btn',
+          onClick: () => {
+            console.log('click');
+          },
+        },
+        {
+          text: '리스트',
+          class: 'edit-list-btn',
+          onClick: () => {
+            console.log('click');
+          },
+        },
+        {
+          text: '앱 상단 바',
+          class: 'edit-appbar-btn',
+          onClick: () => {
+            console.log('click');
+          },
+        },
+        {
+          text: '이미지',
+          class: 'edit-img-btn',
+          onClick: () => {
+            console.log('click');
+          },
+        },
+        {
+          text: '입력 폼',
+          class: 'edit-form-btn',
+          onClick: () => {
+            console.log('click');
+          },
+        },
+      ],
+    },
   };
 
   return (
     <nav className="rightnav">
-      <DefaultEditPanel {...EditPanelPropsData} />
+      <DefaultEditPanel {...pageEditPanelPropsData} />
+      <DefaultEditPanel {...compoEditPanelPropsData} />
     </nav>
   );
 }

@@ -4,19 +4,21 @@ import LeftNav from 'components/layouts/LeftNav';
 import RightNav from 'components/layouts/RightNav';
 import { wrapper } from 'store/storeConfig';
 import PropTypes from 'prop-types';
+
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 import 'styles/reset.css';
 import 'styles/colors.css';
 import 'styles/resources.css';
 import 'styles/globals.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { setIsLogin, setIsAdmin } from 'store/reducers/authSlice';
+import '/styles/app.css';
+
+import { useSelector } from 'react-redux';
 import Signin from './signin';
 
 function App({ Component, pageProps }: AppProps) {
-  /* Redux */
-  // 리덕스 컨트롤용 디스패치
-  const dispatch = useDispatch();
-
   // - 로그인 여부
   // - 관리자 여부
   // - Access Token

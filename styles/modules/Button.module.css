@@ -9,8 +9,8 @@
 /* 햄버거 버튼 */
 .ham {
   position: relative;
-  width: 33px;
-  height: 45px;
+  width: 30px;
+  height: 35px;
   overflow: hidden;
   display: flex;
   align-items: center;
