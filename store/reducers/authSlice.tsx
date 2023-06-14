@@ -1,7 +1,6 @@
 import { HYDRATE } from 'next-redux-wrapper';
-import { CaseReducer, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from 'store/storeConfig';
-import { ActionType } from 'typesafe-actions';
 
 interface authState {
   isLogin: boolean;

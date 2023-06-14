@@ -20,13 +20,9 @@ import Signin from './signin';
 
 function App({ Component, pageProps }: AppProps) {
   // - 로그인 여부
-  // - 관리자 여부
   // - Access Token
   const { isLogin } = useSelector((state: any) => ({
-    // isLoading: state.loadingSlice.isLoading,
     isLogin: state.authSlice.isLogin,
-    // isAdmin: state.authSlice.isAdmin,
-    // accToken: state.tokenSlice.accToken,
   }));
   return (
     <div>

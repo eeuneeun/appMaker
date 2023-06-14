@@ -1,5 +1,5 @@
 import { LoginFormData } from 'types/login';
-import { LoginForm } from '../organisms/form';
+import { LoginForm } from '../organisms/Forms';
 
 export default function login(loginFormData: LoginFormData) {
   return (

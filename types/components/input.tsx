@@ -17,6 +17,10 @@ export interface InputWithLabel {
   label: LabelDataAttrs;
 }
 
+export interface InputWithLabelArr {
+  items: [InputWithLabel];
+}
+
 export interface BtnClickFunc {
   //eslint-disable-next-line no-unused-vars
   (val: any): any;

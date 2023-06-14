@@ -1,4 +1,4 @@
-import { LoginForm } from 'components/UI/organisms/form';
+import { LoginForm } from 'components/UI/organisms/Forms';
 import { LoginFormData } from 'types/login';
 import { setIsLogin } from 'store/reducers/authSlice';
 import { useAppDispatch } from 'store/storeHooks';

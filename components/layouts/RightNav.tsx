@@ -17,28 +17,28 @@ export default function RightNav() {
           text: '빈 화면',
           class: 'page blank-btn',
           onClick: () => {
-            console.log('click');
+            dispatch(addPage('EmptyPage'));
           },
         },
         {
           text: '상단 앱 바',
           class: 'page appbar-btn',
           onClick: () => {
-            dispatch(addPage('DefaultPage'));
+            dispatch(addPage('AppBarPage'));
           },
         },
         {
           text: '기본 폼 화면',
           class: 'page form-btn',
           onClick: () => {
-            console.log('click');
+            dispatch(addPage('FormPage'));
           },
         },
         {
           text: '타일 리스트 화면',
           class: 'page tile-btn',
           onClick: () => {
-            console.log('click');
+            dispatch(addPage('TileListPage'));
           },
         },
       ],

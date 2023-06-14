@@ -1,9 +1,18 @@
-import { LoginButton } from '../atoms/Buttons';
+import { InputWithLabel, InputWithLabelArr } from 'types/components/input';
+import Button, { LoginButton } from '../atoms/Buttons';
 import DefaultInputWithLabel from '../molecules/InputWithLabels';
 import { LoginFormData } from 'types/login';
 
-export default function DefaultForm() {
-  return <div></div>;
+export default function DefaultForm(inputAttrs: InputWithLabelArr) {
+  console.log(inputAttrs);
+  return (
+    <form>
+      {inputAttrs.items.map((item: InputWithLabel, idx: number) => {
+        return <DefaultInputWithLabel {...item} key={`key-${idx}`} />;
+      })}
+      <Button />
+    </form>
+  );
 }
 
 //id

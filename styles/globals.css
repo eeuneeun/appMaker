@@ -57,15 +57,16 @@
            main
 
 **************************/
-.main { width: calc(100% - 480px); height: calc(100% - 50px); position: absolute; top: 50px; left: 130px; } 
+.main {width: calc(100% - 405px); left: 55px; height: calc(100% - 50px); position: absolute; top: 50px;} 
+      .leftnav-open+.leftnav+.rightnav+.main{ width: calc(100% - 480px);  left: 130px;  }
 
 /*************************
  
       1. menu : page
 
 **************************/
-.pageWrap { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; } 
-.pageWrap .device { width: 414px; max-height: 896px; height: 80%; border: 1px solid #b7b7b7; border-radius: 15px; box-shadow: 5px 5px 5px rgb(200, 200, 200, 0.5); } 
+.pageWrap {display: flex; align-items: center; justify-content: center; flex-wrap: wrap; overflow: auto; gap: 30px; padding: 100px 0;} 
+      .pageWrap .device { width: 414px; max-height: 896px; height: 80%; border: 1px solid #b7b7b7; border-radius: 15px; box-shadow: 5px 5px 5px rgb(200, 200, 200, 0.5); } 
 
 /**************************
  

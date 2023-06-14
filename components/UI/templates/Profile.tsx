@@ -1,4 +1,4 @@
-import ProfileInfoList from '../organisms/List';
+import ProfileInfoList from '../organisms/Lists';
 
 export default function DefaultProfile() {
   return (
