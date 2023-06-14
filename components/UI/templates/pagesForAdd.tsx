@@ -2,6 +2,9 @@ import Button from 'components/UI/atoms/Buttons';
 import DefaultAppBar from '../atoms/AppBar';
 import DefaultNavMenu from '../organisms/NavMenus';
 import DefaultForm from '../organisms/Forms';
+import { InputWithLabelArr } from 'types/components/input';
+import { ImgCardList } from '../organisms/Lists';
+import { imgCardArrProps } from 'types/components/edit';
 
 // # 기본 페이지
 // @ 포함 요소 : 기본 틀 + 상단 앱 바 + 하단 메뉴 바
@@ -45,7 +48,7 @@ function AppBarPage() {
 // # 기본 폼 화면
 // @ 포함 요소 : 기본 틀 + 상단 앱 바 + 기본 폼
 function FormPage() {
-  const inputAttrs = {
+  const inputAttrs: InputWithLabelArr = {
     items: [
       {
         input: {
@@ -90,12 +93,22 @@ function FormPage() {
 
 // # 타일 리스트 화면
 // @ 포함 요소 : 기본 틀 + 상단 앱 바 + 타일 리스트
-function TileListPage() {
+function CardListPage() {
+  const imgCardArr: imgCardArrProps = {
+    items: [
+      { text: '텍스트', hrefUrl: '#', class: 'img-card01' },
+      { text: '텍스트', hrefUrl: '#', class: 'img-card02' },
+      { text: '텍스트', hrefUrl: '#', class: 'img-card03' },
+      { text: '텍스트', hrefUrl: '#', class: 'img-card04' },
+    ],
+  };
   return (
     <div className="device ">
       <div className="app dragable">
         <DefaultAppBar />
-        <div className="container"></div>
+        <div className="container">
+          <ImgCardList {...imgCardArr} />
+        </div>
       </div>
     </div>
   );
@@ -116,8 +129,8 @@ function renderPageForAdd(pageName: string) {
     case 'FormPage':
       return <FormPage />;
 
-    case 'TileListPage':
-      return <TileListPage />;
+    case 'CardListPage':
+      return <CardListPage />;
 
     default:
       return <DefaultPage />;
@@ -129,6 +142,6 @@ export {
   EmptyPage,
   AppBarPage,
   FormPage,
-  TileListPage,
+  CardListPage,
   renderPageForAdd,
 };

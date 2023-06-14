@@ -38,7 +38,7 @@ export default function RightNav() {
           text: '타일 리스트 화면',
           class: 'page tile-btn',
           onClick: () => {
-            dispatch(addPage('TileListPage'));
+            dispatch(addPage('CardListPage'));
           },
         },
       ],

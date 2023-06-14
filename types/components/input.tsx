@@ -18,7 +18,7 @@ export interface InputWithLabel {
 }
 
 export interface InputWithLabelArr {
-  items: [InputWithLabel];
+  items: InputWithLabel[];
 }
 
 export interface BtnClickFunc {

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ListOfButtons from '../organisms/Lists';
+import { ListOfButtons } from '../organisms/Lists';
 import { EditPanelProps } from 'types/components/edit';
 
 export default function DefaultEditMenuPanel(EditPanelProps: EditPanelProps) {
