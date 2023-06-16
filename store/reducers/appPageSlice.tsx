@@ -5,10 +5,12 @@ import { ActionType } from 'typesafe-actions';
 
 interface appPageState {
   appPageList: [string];
+  nowEditPage: number;
 }
 
 const initialState: appPageState = {
   appPageList: ['DefaultPage'],
+  nowEditPage: 1,
 };
 
 export const appPageSlice = createSlice({
@@ -20,6 +22,9 @@ export const appPageSlice = createSlice({
     },
     deletePage: (state: appPageState, action: PayloadAction<number>) => {
       state.appPageList.splice(action.payload, 0);
+    },
+    setNowEditPage: (state: appPageState, action: PayloadAction<number>) => {
+      state.nowEditPage = action.payload;
     },
   },
   extraReducers: {
@@ -38,7 +43,7 @@ export const asyncDispatchLogin = (state: any) => (dispatch: any) => {
   }, 1000);
 };
 
-export const { addPage, deletePage } = appPageSlice.actions;
+export const { addPage, deletePage, setNowEditPage } = appPageSlice.actions;
 export const authSelector = (state: RootState) => state.auth;
 
 export default appPageSlice.reducer;

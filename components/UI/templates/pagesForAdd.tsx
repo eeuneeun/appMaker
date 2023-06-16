@@ -10,13 +10,11 @@ import { imgCardArrProps } from 'types/components/edit';
 // @ 포함 요소 : 기본 틀 + 상단 앱 바 + 하단 메뉴 바
 function DefaultPage() {
   return (
-    <div className="device ">
-      <div className="app dragable">
-        <DefaultAppBar />
-        <DefaultNavMenu />
-        <div className="container">
-          <Button />
-        </div>
+    <div className="app dragable">
+      <DefaultAppBar />
+      <DefaultNavMenu />
+      <div className="container">
+        <Button />
       </div>
     </div>
   );
@@ -36,11 +34,9 @@ function EmptyPage() {
 // @ 포함 요소 : 기본 틀 + 상단 앱 바
 function AppBarPage() {
   return (
-    <div className="device ">
-      <div className="app dragable">
-        <DefaultAppBar />
-        <div className="container"></div>
-      </div>
+    <div className="app dragable">
+      <DefaultAppBar />
+      <div className="container"></div>
     </div>
   );
 }
@@ -80,12 +76,10 @@ function FormPage() {
   };
 
   return (
-    <div className="device ">
-      <div className="app dragable">
-        <DefaultAppBar />
-        <div className="container">
-          <DefaultForm {...inputAttrs} />
-        </div>
+    <div className="app dragable">
+      <DefaultAppBar />
+      <div className="container">
+        <DefaultForm {...inputAttrs} />
       </div>
     </div>
   );
@@ -103,19 +97,16 @@ function CardListPage() {
     ],
   };
   return (
-    <div className="device ">
-      <div className="app dragable">
-        <DefaultAppBar />
-        <div className="container">
-          <ImgCardList {...imgCardArr} />
-        </div>
+    <div className="app dragable">
+      <DefaultAppBar />
+      <div className="container">
+        <ImgCardList {...imgCardArr} />
       </div>
     </div>
   );
 }
 
 function renderPageForAdd(pageName: string) {
-  console.log(pageName);
   switch (pageName) {
     case 'DefaultPage':
       return <DefaultPage />;
