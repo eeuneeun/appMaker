@@ -12,7 +12,9 @@ export default function Page() {
   const dispatch = useAppDispatch();
 
   function changeNowEditPage(e: React.MouseEvent) {
-    console.log(e.target);
+    console.log(e.target.arguments.className);
+
+    dispatch(setNowEditPage(1));
   }
 
   return (
