@@ -2,9 +2,23 @@ import DefaultEditPanel from 'components/UI/templates/EditMenuPanel';
 import { addPage } from 'store/reducers/appPageSlice';
 import { EditPanelProps } from 'types/components/edit';
 import { useAppDispatch } from 'store/storeHooks';
+import { useSelector } from 'react-redux';
 
 export default function RightNav() {
   const dispatch = useAppDispatch();
+  const { appPageList } = useSelector((state: any) => ({
+    appPageList: state.appPageSlice.appPageList,
+  }));
+
+  // # 추가 될 새로운 페이지의 아이디 값 생성
+  function getNewId(): string {
+    const lastPageIdNum = Number(
+      appPageList[appPageList.length - 1].pageId.substr(1),
+    );
+
+    const newPageId = 'p' + (lastPageIdNum + 1);
+    return newPageId;
+  }
 
   // 페이지 패널
   const pageEditPanelPropsData: EditPanelProps = {
@@ -17,28 +31,29 @@ export default function RightNav() {
           text: '빈 화면',
           class: 'page blank-btn',
           onClick: () => {
-            dispatch(addPage('EmptyPage'));
+            getNewId();
+            dispatch(addPage({ pageType: 'EmptyPage', pageId: getNewId() }));
           },
         },
         {
           text: '상단 앱 바',
           class: 'page appbar-btn',
           onClick: () => {
-            dispatch(addPage('AppBarPage'));
+            dispatch(addPage({ pageType: 'AppBarPage', pageId: getNewId() }));
           },
         },
         {
           text: '기본 폼 화면',
           class: 'page form-btn',
           onClick: () => {
-            dispatch(addPage('FormPage'));
+            dispatch(addPage({ pageType: 'FormPage', pageId: getNewId() }));
           },
         },
         {
           text: '타일 리스트 화면',
           class: 'page tile-btn',
           onClick: () => {
-            dispatch(addPage('CardListPage'));
+            dispatch(addPage({ pageType: 'CardListPage', pageId: getNewId() }));
           },
         },
       ],

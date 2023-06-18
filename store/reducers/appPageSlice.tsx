@@ -1,29 +1,38 @@
 import { HYDRATE } from 'next-redux-wrapper';
-import { CaseReducer, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from 'store/storeConfig';
-import { ActionType } from 'typesafe-actions';
 
-interface appPageState {
-  appPageList: [string];
-  nowEditPage: number;
+export interface appPageInfo {
+  pageType: string;
+  pageId: string;
+}
+
+export interface appPageState {
+  appPageList: [appPageInfo];
+  nowEditPage: string;
+  nextEditPage: string;
 }
 
 const initialState: appPageState = {
-  appPageList: ['DefaultPage'],
-  nowEditPage: 1,
+  appPageList: [{ pageType: 'DefaultPage', pageId: 'p1' }],
+  nowEditPage: 'p1',
+  nextEditPage: '',
 };
 
 export const appPageSlice = createSlice({
   name: 'appPage',
   initialState,
   reducers: {
-    addPage: (state: appPageState, action: PayloadAction<string>) => {
+    addPage: (state: appPageState, action: PayloadAction<appPageInfo>) => {
       state.appPageList.push(action.payload);
     },
     deletePage: (state: appPageState, action: PayloadAction<number>) => {
       state.appPageList.splice(action.payload, 0);
     },
-    setNowEditPage: (state: appPageState, action: PayloadAction<number>) => {
+    setNowEditPage: (state: appPageState, action: PayloadAction<string>) => {
+      state.nowEditPage = action.payload;
+    },
+    setNextEditPage: (state: appPageState, action: PayloadAction<string>) => {
       state.nowEditPage = action.payload;
     },
   },
@@ -43,7 +52,8 @@ export const asyncDispatchLogin = (state: any) => (dispatch: any) => {
   }, 1000);
 };
 
-export const { addPage, deletePage, setNowEditPage } = appPageSlice.actions;
+export const { addPage, deletePage, setNowEditPage, setNextEditPage } =
+  appPageSlice.actions;
 export const authSelector = (state: RootState) => state.auth;
 
 export default appPageSlice.reducer;

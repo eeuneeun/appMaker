@@ -23,11 +23,7 @@ function DefaultPage() {
 // # 빈 화면
 // @ 포함 요소 : 기본 틀
 function EmptyPage() {
-  return (
-    <div className="device ">
-      <div className="app dragable"></div>
-    </div>
-  );
+  return <div className="app dragable"></div>;
 }
 
 // # 상단 앱 바
