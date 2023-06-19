@@ -5,15 +5,41 @@ import DefaultForm from '../organisms/Forms';
 import { InputWithLabelArr } from 'types/components/input';
 import { ImgCardList } from '../organisms/Lists';
 import { imgCardArrProps } from 'types/components/edit';
+import { useAppDispatch } from 'store/storeHooks';
+import { useSelector } from 'react-redux';
+import { ContentInfo, addComponent } from 'store/reducers/appPageSlice';
+import { allowDrop, dropHandler } from 'components/utils/utilFunctions';
 
 // # 기본 페이지
 // @ 포함 요소 : 기본 틀 + 상단 앱 바 + 하단 메뉴 바
 function DefaultPage() {
+  const dispatch = useAppDispatch();
+  const { appPageList } = useSelector((state: any) => ({
+    appPageList: state.appPageSlice.appPageList,
+  }));
+
+  function addComponents(e: React.DragEvent<HTMLDivElement>) {
+    const targetPageId = e.currentTarget.parentElement?.parentElement
+      ?.id as string;
+    const compoType = dropHandler(e);
+
+    dispatch(
+      addComponent({
+        pageId: targetPageId,
+        compoType: compoType,
+      }),
+    );
+  }
+
   return (
     <div className="app dragable">
       <DefaultAppBar />
       <DefaultNavMenu />
-      <div className="container">
+      <div className="container" onDragOver={allowDrop} onDrop={addComponents}>
+        {appPageList[0].pageContents.map((item: ContentInfo, idx: number) => {
+          item.compoType == 'Text' && <div>1</div>;
+        })}
+
         <Button />
       </div>
     </div>

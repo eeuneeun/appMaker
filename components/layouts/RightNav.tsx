@@ -1,8 +1,9 @@
-import DefaultEditPanel from 'components/UI/templates/EditMenuPanel';
+import { useSelector } from 'react-redux';
 import { addPage } from 'store/reducers/appPageSlice';
 import { EditPanelProps } from 'types/components/edit';
 import { useAppDispatch } from 'store/storeHooks';
-import { useSelector } from 'react-redux';
+import DefaultEditPanel from 'components/UI/templates/EditMenuPanel';
+import { dragStartHandler } from 'components/utils/utilFunctions';
 
 export default function RightNav() {
   const dispatch = useAppDispatch();
@@ -32,28 +33,52 @@ export default function RightNav() {
           class: 'page blank-btn',
           onClick: () => {
             getNewId();
-            dispatch(addPage({ pageType: 'EmptyPage', pageId: getNewId() }));
+            dispatch(
+              addPage({
+                pageType: 'EmptyPage',
+                pageId: getNewId(),
+                pageContents: [{ compoType: '' }],
+              }),
+            );
           },
         },
         {
           text: '상단 앱 바',
           class: 'page appbar-btn',
           onClick: () => {
-            dispatch(addPage({ pageType: 'AppBarPage', pageId: getNewId() }));
+            dispatch(
+              addPage({
+                pageType: 'AppBarPage',
+                pageId: getNewId(),
+                pageContents: [{ compoType: '' }],
+              }),
+            );
           },
         },
         {
           text: '기본 폼 화면',
           class: 'page form-btn',
           onClick: () => {
-            dispatch(addPage({ pageType: 'FormPage', pageId: getNewId() }));
+            dispatch(
+              addPage({
+                pageType: 'FormPage',
+                pageId: getNewId(),
+                pageContents: [{ compoType: '' }],
+              }),
+            );
           },
         },
         {
           text: '타일 리스트 화면',
           class: 'page tile-btn',
           onClick: () => {
-            dispatch(addPage({ pageType: 'CardListPage', pageId: getNewId() }));
+            dispatch(
+              addPage({
+                pageType: 'CardListPage',
+                pageId: getNewId(),
+                pageContents: [{ compoType: '' }],
+              }),
+            );
           },
         },
       ],
@@ -73,40 +98,58 @@ export default function RightNav() {
           onClick: () => {
             console.log('click');
           },
+          onDragStart: (e: React.DragEvent<HTMLDivElement>) => {
+            dragStartHandler(e, 'Text');
+          },
         },
         {
           text: '버튼',
           class: 'edit-btn-btn',
           onClick: () => {
-            console.log('click');
+            console.log('Button');
+          },
+          onDragStart: (e: React.DragEvent<HTMLDivElement>) => {
+            dragStartHandler(e, 'Button');
           },
         },
         {
           text: '리스트',
           class: 'edit-list-btn',
           onClick: () => {
-            console.log('click');
+            console.log('List');
+          },
+          onDragStart: (e: React.DragEvent<HTMLDivElement>) => {
+            dragStartHandler(e, 'List');
           },
         },
         {
           text: '앱 상단 바',
           class: 'edit-appbar-btn',
           onClick: () => {
-            console.log('click');
+            console.log('Appbar');
+          },
+          onDragStart: (e: React.DragEvent<HTMLDivElement>) => {
+            dragStartHandler(e, 'Appbar');
           },
         },
         {
           text: '이미지',
           class: 'edit-img-btn',
           onClick: () => {
-            console.log('click');
+            console.log('Image');
+          },
+          onDragStart: (e: React.DragEvent<HTMLDivElement>) => {
+            dragStartHandler(e, 'Image');
           },
         },
         {
           text: '입력 폼',
           class: 'edit-form-btn',
           onClick: () => {
-            console.log('click');
+            console.log('Form');
+          },
+          onDragStart: (e: React.DragEvent<HTMLDivElement>) => {
+            dragStartHandler(e, 'Form');
           },
         },
       ],

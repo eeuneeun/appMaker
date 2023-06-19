@@ -1,7 +1,7 @@
 import { renderPageForAdd } from 'components/UI/templates/pagesForAdd';
 import { useSelector } from 'react-redux';
 import {
-  appPageInfo,
+  AppPageInfo,
   setNowEditPage,
   deletePage,
 } from 'store/reducers/appPageSlice';
@@ -27,7 +27,7 @@ export default function Page() {
 
   return (
     <div className="main pageWrap">
-      {appPageList.map((item: appPageInfo, idx: number) => {
+      {appPageList.map((item: AppPageInfo, idx: number) => {
         const el = renderPageForAdd(item.pageType);
         return (
           <div

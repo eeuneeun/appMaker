@@ -1,13 +1,14 @@
 import styles from '../../../styles/modules/Button.module.css';
-import { CompoBtn, SubmitBtn } from 'types/components/input';
+import { SubmitBtn } from 'types/components/input';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import { CompEditBtn } from 'types/components/edit';
 
-// @클릭이 가능한 기본 유형 버튼
+// @ 클릭이 가능한 기본 유형 버튼
 export default function Button() {
   return <button className={styles.btn}>Click me</button>;
 }
 
-// @상단 헤더 좌측의 햄버거 버튼
+// @ 상단 헤더 좌측의 햄버거 버튼
 export function HamburgerButton({ ...pageProps }) {
   return (
     <button className={styles.ham} onClick={pageProps.onClick}>
@@ -18,12 +19,12 @@ export function HamburgerButton({ ...pageProps }) {
   );
 }
 
-// @다른 페이지로 이동하는 링크 버튼
+// @ 다른 페이지로 이동하는 링크 버튼
 export function PageLinkButton() {
   return <button className={styles.ham}>PageLinkButton</button>;
 }
 
-// @로그인 폼 하단의 버튼
+// @ 로그인 폼 하단의 버튼
 export function LoginButton(LoginBtnData: SubmitBtn) {
   return (
     <button
@@ -36,21 +37,24 @@ export function LoginButton(LoginBtnData: SubmitBtn) {
   );
 }
 
-// @에디터 컴포넌트 패널의 버튼
-export function CompoButton(CompoBtnData: CompoBtn) {
+// @ 에디터 컴포넌트 패널의 버튼
+export function CompoButton(CompoBtnData: CompEditBtn) {
   return (
-    <button
+    <div
       className={`basic edit-btn ${
         CompoBtnData.class ? CompoBtnData.class : ''
       }`}
       id={CompoBtnData.id}
       onClick={CompoBtnData.onClick}
+      onDragStart={CompoBtnData.onDragStart}
+      draggable={true}
     >
       {CompoBtnData.text}
-    </button>
+    </div>
   );
 }
 
+// @ 페이지 삭제 버튼
 export function PageDelButton(PageDelProps: SubmitBtn) {
   return (
     <button

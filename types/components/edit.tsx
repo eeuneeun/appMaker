@@ -10,6 +10,7 @@ export interface CompEditBtn {
   id?: string;
   hrefUrl?: string;
   onClick?: any;
+  onDragStart?: any; // *추후 BtnDragFunc type 적용!
 }
 
 export interface imgCard {
@@ -35,4 +36,8 @@ export interface CompEditBtnArrProps {
 export interface EditPanelProps {
   EditMenuPanelData: EditMenuPanel;
   BtnArrData: CompEditBtnArrProps;
+}
+
+export interface BtnDragFunc {
+  (e: React.DragEvent<HTMLDivElement>, data: string): void;
 }

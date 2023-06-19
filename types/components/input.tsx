@@ -33,13 +33,6 @@ export interface SubmitBtn {
   onClick?: BtnClickFunc;
 }
 
-export interface CompoBtn {
-  id?: string;
-  class?: string;
-  text?: string;
-  onClick?: BtnClickFunc;
-}
-
 export interface InputClickFunc {
   (e: React.FormEvent<HTMLFormElement>): void;
 }
