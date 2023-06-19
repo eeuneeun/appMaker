@@ -1,283 +1,287 @@
 /**************************
  
-    resource for project
+ resource for project
 
 ***************************/
 
 /* font */
 
-@font-face {
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 100;
-  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2)
-      format('woff2'),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff)
-      format('woff'),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf)
-      format('opentype');
-}
-@font-face {
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 300;
-  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2)
-      format('woff2'),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff)
-      format('woff'),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf)
-      format('opentype');
-}
-@font-face {
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 400;
-  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2)
-      format('woff2'),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff)
-      format('woff'),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf)
-      format('opentype');
-}
-@font-face {
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 500;
-  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2)
-      format('woff2'),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff)
-      format('woff'),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf)
-      format('opentype');
-}
-@font-face {
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 700;
-  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2)
-      format('woff2'),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff)
-      format('woff'),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf)
-      format('opentype');
-}
-@font-face {
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 900;
-  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2)
-      format('woff2'),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff)
-      format('woff'),
-    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf)
-      format('opentype');
-}
+@font-face { 
+ font-family: 'Noto Sans KR'; 
+ font-style: normal; 
+ font-weight: 100; 
+ src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2)
+ format('woff2'),
+ url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff)
+ format('woff'),
+ url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf)
+ format('opentype'); 
+ } 
+@font-face { 
+ font-family: 'Noto Sans KR'; 
+ font-style: normal; 
+ font-weight: 300; 
+ src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2)
+ format('woff2'),
+ url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff)
+ format('woff'),
+ url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf)
+ format('opentype'); 
+ } 
+@font-face { 
+ font-family: 'Noto Sans KR'; 
+ font-style: normal; 
+ font-weight: 400; 
+ src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2)
+ format('woff2'),
+ url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff)
+ format('woff'),
+ url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf)
+ format('opentype'); 
+ } 
+@font-face { 
+ font-family: 'Noto Sans KR'; 
+ font-style: normal; 
+ font-weight: 500; 
+ src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2)
+ format('woff2'),
+ url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff)
+ format('woff'),
+ url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf)
+ format('opentype'); 
+ } 
+@font-face { 
+ font-family: 'Noto Sans KR'; 
+ font-style: normal; 
+ font-weight: 700; 
+ src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2)
+ format('woff2'),
+ url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff)
+ format('woff'),
+ url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf)
+ format('opentype'); 
+ } 
+@font-face { 
+ font-family: 'Noto Sans KR'; 
+ font-style: normal; 
+ font-weight: 900; 
+ src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2)
+ format('woff2'),
+ url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff)
+ format('woff'),
+ url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf)
+ format('opentype'); 
+ } 
 
-@font-face {
-  font-family: 'GmarketSansMedium';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
-    format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+@font-face { 
+ font-family: 'GmarketSansMedium'; 
+ src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+ format('woff'); 
+ font-weight: normal; 
+ font-style: normal; 
+ } 
 
-@font-face {
-  font-family: 'GmarketSansLight';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff')
-    format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+@font-face { 
+ font-family: 'GmarketSansLight'; 
+ src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff')
+ format('woff'); 
+ font-weight: normal; 
+ font-style: normal; 
+ } 
 
 /* custom color */
-:root {
-  --default-bg-color: #0c0c0c;
-  --default-wrap-bg-color: #1a1a1a;
-  --theme-color: #0cba7f;
+:root { 
+ --default-bg-color: #0c0c0c; 
+ --default-wrap-bg-color: #1a1a1a; 
+ --theme-color: #0cba7f; 
 
-  --num-font-medium: 'GmarketSansMedium';
-  --num-font-light: 'GmarketSansLight';
-}
-.theme-color {
-  color: #15b600;
-}
+ --num-font-medium: 'GmarketSansMedium'; 
+ --num-font-light: 'GmarketSansLight'; 
+ } 
+.theme-color { 
+ color: #15b600; 
+ } 
 .theme-color-bg:hover,
-.theme-color-bg {
-  background: #15b600;
-  color: #fff;
-}
-.gray-bg {
-  background: #b4b4b4;
-  color: #fff;
-}
-.white-color-bg {
-  background: #fff;
-  color: #272727 !important;
-  border: 1px solid #272727 !important;
-}
+.theme-color-bg { 
+ background: #15b600; 
+ color: #fff; 
+ } 
+.gray-bg { 
+ background: #b4b4b4; 
+ color: #fff; 
+ } 
+.white-color-bg { 
+ background: #fff; 
+ color: #272727 !important; 
+ border: 1px solid #272727 !important; 
+ } 
 
-.red-bg {
-  background: #e94c48 !important;
-}
-.yellow-bg {
-  background: #fecf3e !important;
-}
-.green-bg {
-  background: #32bc5f !important;
-}
+.red-bg { 
+ background: #e94c48 !important; 
+ } 
+.yellow-bg { 
+ background: #fecf3e !important; 
+ } 
+.green-bg { 
+ background: #32bc5f !important; 
+ } 
 
-.on-bg {
-  background: #32bc5f !important;
-}
-.off-bg {
-  background: #424242 !important;
-}
+.on-bg { 
+ background: #32bc5f !important; 
+ } 
+.off-bg { 
+ background: #424242 !important; 
+ } 
 
-.increase {
-  color: #ff302c !important;
-}
-.decrease {
-  color: #246cca !important;
-}
-.increase-bg {
-  background: #ff302c !important;
-}
-.decrease-bg {
-  background: #246cca !important;
-}
+.increase { 
+ color: #ff302c !important; 
+ } 
+.decrease { 
+ color: #246cca !important; 
+ } 
+.increase-bg { 
+ background: #ff302c !important; 
+ } 
+.decrease-bg { 
+ background: #246cca !important; 
+ } 
 
-.good-bg {
-  background: #0cbc80 !important;
-}
-.soso-bg {
-  background: #ffd11b !important;
-}
-.bad-bg {
-  background: #ff2a5c !important;
-}
+.good-bg { 
+ background: #0cbc80 !important; 
+ } 
+.soso-bg { 
+ background: #ffd11b !important; 
+ } 
+.bad-bg { 
+ background: #ff2a5c !important; 
+ } 
 
-.good-color {
-  color: #0cbc80 !important;
-}
-.soso-color {
-  color: #ffd11b !important;
-}
-.bad-color {
-  color: #ff2a5c !important;
-}
+.good-color { 
+ color: #0cbc80 !important; 
+ } 
+.soso-color { 
+ color: #ffd11b !important; 
+ } 
+.bad-color { 
+ color: #ff2a5c !important; 
+ } 
 
 /* 2-2. custom default btn */
-.btn {
-  display: block;
-  line-height: 0;
-  padding: 20px;
-  text-align: center;
-  transition: all 300ms ease;
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
-  border: 0;
-  border-radius: 5px;
-}
-.round {
-  padding: 12px 25px;
-  background: #4b4b4b;
-  border-radius: 15px;
-  font-size: 14px;
-  font-weight: 600;
-}
-.confirm {
-  padding: 15px 10px;
-  background: #4b4b4b;
-  font-size: 12px;
-  border-radius: 5px;
-}
+.btn { 
+ display: block; 
+ line-height: 0; 
+ padding: 20px; 
+ text-align: center; 
+ transition: all 300ms ease; 
+ color: #fff; 
+ font-family: 'Roboto', sans-serif; 
+ border: 0; 
+ border-radius: 5px; 
+ } 
+.round { 
+ padding: 12px 25px; 
+ background: #4b4b4b; 
+ border-radius: 15px; 
+ font-size: 14px; 
+ font-weight: 600; 
+ } 
+.confirm { 
+ padding: 15px 10px; 
+ background: #4b4b4b; 
+ font-size: 12px; 
+ border-radius: 5px; 
+ } 
 
-.option {
-  justify-content: space-between;
-  padding: 0 15px;
-}
-.option select {
-  margin: 0 5px;
-}
-.option .btn {
-  margin: 0 5px;
-  background: #217085;
-}
+.option { 
+ justify-content: space-between; 
+ padding: 0 15px; 
+ } 
+.option select { 
+ margin: 0 5px; 
+ } 
+.option .btn { 
+ margin: 0 5px; 
+ background: #217085; 
+ } 
 
-.btn-group {
-  justify-content: right;
-}
-.btn-group .btn {
-  width: 100px;
-  margin: 5px;
-}
+.btn-group { 
+ justify-content: right; 
+ } 
+.btn-group .btn { 
+ width: 100px; 
+ margin: 5px; 
+ } 
+
+/* common button */
+/* 앱 페이지 삭제 아이콘 버튼 */ 
+.page-del-btn{width: 30px; height: 30px; border-radius: 50%; border: 1px solid #eee;overflow: hidden;display: flex; align-items: center; justify-content: center; color: #fff; background: #000;}
 
 /* 영역 확장 버튼 화살표 모양 */
-.expand-btn{background: url(/imgs/expand-arrow.svg) no-repeat center; transform: rotate(0deg);} 
-.active .expand-btn{transform: rotate(90deg) !important;} 
+.expand-btn { background: url(/imgs/expand-arrow.svg) no-repeat center; transform: rotate(0deg); } 
+.active .expand-btn { transform: rotate(90deg) !important; } 
 
 /* 2-2. custom default tag */
-.tag {
-  color: #fff;
-  font-size: 12px;
-  padding: 5px 8px;
-  border-radius: 5px;
-  display: inline-block;
-}
+.tag { 
+ color: #fff; 
+ font-size: 12px; 
+ padding: 5px 8px; 
+ border-radius: 5px; 
+ display: inline-block; 
+ } 
 
 
 /* 2-3. common components */
-.edit-list{width: 95%; display: flex; align-items: flex-start; flex-wrap: wrap; margin: 0 auto; padding-left: 2%;}
-    .edit-list li{ width: 49% !important; display: flex; align-items: center; justify-content: center;}
+.edit-list { width: 95%; display: flex; align-items: flex-start; flex-wrap: wrap; margin: 0 auto; padding-left: 2%; } 
+ .edit-list li { width: 49% !important; display: flex; align-items: center; justify-content: center; } 
 
-    /* edit-btn */
-    .edit-btn{width: 100%; max-width: 155px; height: 140px; background-size: 100px !important; background-color: #f1f1f1 !important; display: flex; align-items: flex-start; justify-content: center;  border-radius: 5px; padding-top: 10px;}
-    .page.edit-btn{height: 180px;background-size: 70px !important;}
-      /* pages */
-      .page.blank-btn{background: url(/imgs/page_blank_icon.png) no-repeat center bottom 15px;background-size: 145px !important;}
-      .page.appbar-btn{background: url(/imgs/page_appbar_icon.jpg) no-repeat center bottom 15px; }
-      .page.form-btn{background: url(/imgs/page_form_icon.jpg) no-repeat center bottom 15px;}
-      .page.tile-btn{background: url(/imgs/page_tile_icon.jpg) no-repeat center bottom 15px;}
+ /* edit-btn */
+ .edit-btn { width: 100%; max-width: 155px; height: 140px; background-size: 100px !important; background-color: #f1f1f1 !important; display: flex; align-items: flex-start; justify-content: center; border-radius: 5px; padding-top: 10px; } 
+ .page.edit-btn { height: 180px; background-size: 70px !important; } 
 
-      /* components */
-      .edit-text-btn{background: url(/imgs/edit_text_icon.png) no-repeat center bottom 15px;}
-      .edit-btn-btn{background: url(/imgs/edit_btn_icon.png) no-repeat center bottom 15px;}
-      .edit-list-btn{background: url(/imgs/edit_list_icon.png) no-repeat center bottom 15px;}
-      .edit-appbar-btn{background: url(/imgs/edit_appbar_icon.png) no-repeat center bottom 15px;}
-      .edit-img-btn{background: url(/imgs/edit_img_icon.png) no-repeat center bottom 15px;}
-      .edit-form-btn{background: url(/imgs/edit_form_icon.png) no-repeat center bottom 15px;}
-      
-      
+ /* pages */
+ .page.blank-btn { background: url(/imgs/page_blank_icon.png) no-repeat center bottom 15px; background-size: 145px !important; } 
+ .page.appbar-btn { background: url(/imgs/page_appbar_icon.jpg) no-repeat center bottom 15px; } 
+ .page.form-btn { background: url(/imgs/page_form_icon.jpg) no-repeat center bottom 15px; } 
+ .page.tile-btn { background: url(/imgs/page_tile_icon.jpg) no-repeat center bottom 15px; } 
 
-
-.edit-menu { width: 100%;} 
-    .edit-menu-header, 
-    .edit-menu-footer{width: 100%; display: flex; justify-content: space-between; align-items: center;} 
-    
-      .edit-menu-header{  position: relative; border-top: 1px solid #eee;border-bottom: 1px solid #eee;}
-      .edit-menu-header::before{content: ''; display: inline-block; width: 5px; height: 100%; background: #eee; position: absolute; top: 0; left: 0;}
-
-        .edit-menu-header button{width: 100%; height: 100%; padding: 10px 20px; display: flex; justify-content: space-between; font-weight: 700; color: #7f7f7f;}
-        .edit-menu-header button span{width: 20px; height: 20px; overflow: hidden; text-indent: -99999999px;}
-
-        .active .edit-menu-header button{color: #000;}
+ /* components */
+ .edit-text-btn { background: url(/imgs/edit_text_icon.png) no-repeat center bottom 15px; } 
+ .edit-btn-btn { background: url(/imgs/edit_btn_icon.png) no-repeat center bottom 15px; } 
+ .edit-list-btn { background: url(/imgs/edit_list_icon.png) no-repeat center bottom 15px; } 
+ .edit-appbar-btn { background: url(/imgs/edit_appbar_icon.png) no-repeat center bottom 15px; } 
+ .edit-img-btn { background: url(/imgs/edit_img_icon.png) no-repeat center bottom 15px; } 
+ .edit-form-btn { background: url(/imgs/edit_form_icon.png) no-repeat center bottom 15px; } 
 
 
+ 
+.edit-menu { width: 100%; } 
+ .edit-menu-header, 
+ .edit-menu-footer { width: 100%; display: flex; justify-content: space-between; align-items: center; } 
+ 
+ .edit-menu-header { position: relative; border-top: 1px solid #eee; border-bottom: 1px solid #eee; } 
+ .edit-menu-header::before { content: ''; display: inline-block; width: 5px; height: 100%; background: #eee; position: absolute; top: 0; left: 0; } 
 
-      .edit-menu-container{width: 100%; display: none;}
-      .active .edit-menu-container{display: block;}
-        
+ .edit-menu-header button { width: 100%; height: 100%; padding: 10px 20px; display: flex; justify-content: space-between; font-weight: 700; color: #7f7f7f; } 
+ .edit-menu-header button span { width: 20px; height: 20px; overflow: hidden; text-indent: -99999999px; } 
+
+ .active .edit-menu-header button { color: #000; } 
+
+
+
+ .edit-menu-container { width: 100%; display: none; } 
+ .active .edit-menu-container { display: block; } 
+ 
 
 
 /* img-card-list */
-.img-card-list{gap: 10px; width: 100%; display: flex; align-items: flex-start; flex-wrap: wrap; margin: 0 auto;}
-  .img-card-list li{width: calc(50% - 5px);  height: 200px;}
+.img-card-list { gap: 10px; width: 100%; display: flex; align-items: flex-start; flex-wrap: wrap; margin: 0 auto; } 
+ .img-card-list li { width: calc(50% - 5px); height: 200px; } 
 
 
 
 /* img-card */
-.img-card{ display: block; width: 100%; height: 100%; border: 1px solid #eee; color: #000; padding: 5px;}
-  .img-card img,
-  .img-card .img{width: 100%; min-height: 80%; background: #f6f5f5;}
-  
-  .img-card span{display: inline-block; width: 100%; padding: 10px; ;}
+.img-card { display: block; width: 100%; height: 100%; border: 1px solid #eee; color: #000; padding: 5px; } 
+ .img-card img,
+ .img-card .img { width: 100%; min-height: 80%; background: #f6f5f5; } 
+ 
+ .img-card span { display: inline-block; width: 100%; padding: 10px;; } 

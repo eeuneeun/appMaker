@@ -26,8 +26,15 @@ export const appPageSlice = createSlice({
     addPage: (state: appPageState, action: PayloadAction<appPageInfo>) => {
       state.appPageList.push(action.payload);
     },
-    deletePage: (state: appPageState, action: PayloadAction<number>) => {
-      state.appPageList.splice(action.payload, 0);
+    deletePage: (state: appPageState, action: PayloadAction<string>) => {
+      if (state.appPageList.length > 1) {
+        const targetIdx = state.appPageList.findIndex(
+          (item) => item.pageId === action.payload,
+        );
+        state.appPageList.splice(targetIdx, 1);
+      } else {
+        return alert('최소한 하나의 페이지가 필요합니다!');
+      }
     },
     setNowEditPage: (state: appPageState, action: PayloadAction<string>) => {
       state.nowEditPage = action.payload;

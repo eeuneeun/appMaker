@@ -1,5 +1,6 @@
 import styles from '../../../styles/modules/Button.module.css';
 import { CompoBtn, SubmitBtn } from 'types/components/input';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 // @클릭이 가능한 기본 유형 버튼
 export default function Button() {
@@ -46,6 +47,20 @@ export function CompoButton(CompoBtnData: CompoBtn) {
       onClick={CompoBtnData.onClick}
     >
       {CompoBtnData.text}
+    </button>
+  );
+}
+
+export function PageDelButton(PageDelProps: SubmitBtn) {
+  return (
+    <button
+      className={`page-del-btn ${
+        PageDelProps.class ? 'PageDelProps.class' : ''
+      }`}
+      id={`${PageDelProps.id ? 'PageDelProps.id' : ''}`}
+      onClick={PageDelProps.onClick}
+    >
+      <DeleteForeverIcon />
     </button>
   );
 }

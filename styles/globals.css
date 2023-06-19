@@ -66,9 +66,12 @@
 
 **************************/
 .pageWrap {display: flex; align-items: center; justify-content: center; flex-wrap: wrap; overflow: auto; gap: 30px; padding: 100px 0;} 
-      .pageWrap .device { width: 414px; max-height: 896px; height: 80%; border: 1px solid #b7b7b7; border-radius: 15px; box-shadow: 5px 5px 5px rgb(200, 200, 200, 0.5); overflow: hidden
-            ;} 
-      .pageWrap .device.active {border: 2px solid #000;} 
+  
+      .pageWrap .device { width: 414px; max-height: 896px; height: 80%; border: 1px solid #b7b7b7; border-radius: 18px; box-shadow: 5px 5px 5px rgb(200, 200, 200, 0.5);  position: relative;} 
+      .pageWrap .device.active {border: 2px solid #000;}
+      
+            .pageWrap .device .app{overflow: hidden;border-radius: 15px;} 
+            .pageWrap .device .page-del-btn{position: absolute; left: -10px; top: -10px; z-index: 10;} 
 
 /**************************
  
