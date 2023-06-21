@@ -1,15 +1,19 @@
 import { HYDRATE } from 'next-redux-wrapper';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from 'store/storeConfig';
-
-export interface ContentInfo {
-  compoType: string;
-}
+import { getIdxOfArr } from 'components/utils/utilFunctions';
 
 export interface AppPageInfo {
-  pageType: string;
-  pageId: string;
-  pageContents: [ContentInfo];
+  id: string;
+  startType: string;
+  header?: string;
+  footer?: string;
+  compoList: [CompoInfo];
+}
+
+export interface CompoInfo {
+  id: string;
+  type: string;
 }
 
 export interface AppPageState {
@@ -18,16 +22,18 @@ export interface AppPageState {
 }
 
 export interface AddCompoInfo {
-  pageId: string;
-  compoType: string;
+  id: string;
+  CompoInfo: CompoInfo;
 }
 
 const initialState: AppPageState = {
   appPageList: [
     {
-      pageType: 'DefaultPage',
-      pageId: 'p1',
-      pageContents: [{ compoType: '' }],
+      id: 'p1',
+      startType: 'DefaultPage',
+      header: 'DefaultAppBar',
+      footer: 'DefaultNavMenu',
+      compoList: [{ id: 'c1', type: 'div' }],
     },
   ],
   nowEditPage: 'p1',
@@ -42,9 +48,7 @@ export const appPageSlice = createSlice({
     },
     deletePage: (state: AppPageState, action: PayloadAction<string>) => {
       if (state.appPageList.length > 1) {
-        const targetIdx = state.appPageList.findIndex(
-          (item) => item.pageId === action.payload,
-        );
+        const targetIdx = getIdxOfArr(state.appPageList, action.payload);
 
         state.appPageList.splice(targetIdx, 1);
       } else {
@@ -56,10 +60,11 @@ export const appPageSlice = createSlice({
       action: PayloadAction<AddCompoInfo>,
     ) => {
       const targetIdx = state.appPageList.findIndex(
-        (item) => item.pageId === action.payload.pageId,
+        (item) => item.id === action.payload.id,
       );
-      state.appPageList[targetIdx].pageContents.push({
-        compoType: action.payload.compoType,
+      state.appPageList[targetIdx].compoList.push({
+        id: action.payload.CompoInfo.id,
+        type: action.payload.CompoInfo.type,
       });
     },
     setNowEditPage: (state: AppPageState, action: PayloadAction<string>) => {

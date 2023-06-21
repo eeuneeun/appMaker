@@ -28,15 +28,15 @@ export default function Page() {
   return (
     <div className="main pageWrap">
       {appPageList.map((item: AppPageInfo, idx: number) => {
-        const el = renderPageForAdd(item.pageType);
+        const el = renderPageForAdd(item.startType, idx);
         return (
           <div
-            id={item.pageId}
-            className={`device ${item.pageId == nowEditPage ? 'active' : ''}`}
+            id={item.id}
+            className={`device ${item.id == nowEditPage ? 'active' : ''}`}
             key={`key-${idx}`}
             onClick={changeNowEditPage}
           >
-            <PageDelButton onClick={() => dispatch(deletePage(item.pageId))} />
+            <PageDelButton onClick={() => dispatch(deletePage(item.id))} />
             {el}
           </div>
         );

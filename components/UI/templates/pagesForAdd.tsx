@@ -7,39 +7,57 @@ import { ImgCardList } from '../organisms/Lists';
 import { imgCardArrProps } from 'types/components/edit';
 import { useAppDispatch } from 'store/storeHooks';
 import { useSelector } from 'react-redux';
-import { ContentInfo, addComponent } from 'store/reducers/appPageSlice';
-import { allowDrop, dropHandler } from 'components/utils/utilFunctions';
+import {
+  AppPageInfo,
+  CompoInfo,
+  addComponent,
+} from 'store/reducers/appPageSlice';
+import {
+  allowDrop,
+  dropHandler,
+  getNewId,
+} from 'components/utils/utilFunctions';
+import { renderCompoForAdd } from './compoForAdd';
 
 // # 기본 페이지
 // @ 포함 요소 : 기본 틀 + 상단 앱 바 + 하단 메뉴 바
-function DefaultPage() {
+function DefaultPage(pageIdx: number) {
   const dispatch = useAppDispatch();
   const { appPageList } = useSelector((state: any) => ({
     appPageList: state.appPageSlice.appPageList,
   }));
 
+  // # 하위 컴포넌트 추가 함수
   function addComponents(e: React.DragEvent<HTMLDivElement>) {
     const targetPageId = e.currentTarget.parentElement?.parentElement
       ?.id as string;
+
     const compoType = dropHandler(e);
+    const CompoInfo = {
+      id: getNewId(appPageList, 'components', targetPageId),
+      type: compoType,
+    };
 
     dispatch(
       addComponent({
-        pageId: targetPageId,
-        compoType: compoType,
+        id: targetPageId,
+        CompoInfo: CompoInfo,
       }),
     );
   }
 
   return (
     <div className="app dragable">
+      {/* <renderHeaderForAdd  /> */}
       <DefaultAppBar />
       <DefaultNavMenu />
       <div className="container" onDragOver={allowDrop} onDrop={addComponents}>
-        {appPageList[0].pageContents.map((item: ContentInfo, idx: number) => {
-          item.compoType == 'Text' && <div>1</div>;
-        })}
-
+        {appPageList[pageIdx].compoList.map(
+          (component: CompoInfo, compoIdx: number) => {
+            const el = renderCompoForAdd(component.type);
+            return el;
+          },
+        )}
         <Button />
       </div>
     </div>
@@ -128,10 +146,10 @@ function CardListPage() {
   );
 }
 
-function renderPageForAdd(pageName: string) {
+function renderPageForAdd(pageName: string, idx: number) {
   switch (pageName) {
     case 'DefaultPage':
-      return <DefaultPage />;
+      return DefaultPage(idx);
 
     case 'EmptyPage':
       return <EmptyPage />;
@@ -146,7 +164,7 @@ function renderPageForAdd(pageName: string) {
       return <CardListPage />;
 
     default:
-      return <DefaultPage />;
+      return DefaultPage(idx);
   }
 }
 

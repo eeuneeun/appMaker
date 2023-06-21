@@ -1,25 +1,19 @@
 import { useSelector } from 'react-redux';
-import { addPage } from 'store/reducers/appPageSlice';
+import { CompoInfo, addPage } from 'store/reducers/appPageSlice';
 import { EditPanelProps } from 'types/components/edit';
 import { useAppDispatch } from 'store/storeHooks';
 import DefaultEditPanel from 'components/UI/templates/EditMenuPanel';
-import { dragStartHandler } from 'components/utils/utilFunctions';
+import {
+  dragStartHandler,
+  getIdxOfArr,
+  getNewId,
+} from 'components/utils/utilFunctions';
 
 export default function RightNav() {
   const dispatch = useAppDispatch();
   const { appPageList } = useSelector((state: any) => ({
     appPageList: state.appPageSlice.appPageList,
   }));
-
-  // # 추가 될 새로운 페이지의 아이디 값 생성
-  function getNewId(): string {
-    const lastPageIdNum = Number(
-      appPageList[appPageList.length - 1].pageId.substr(1),
-    );
-
-    const newPageId = 'p' + (lastPageIdNum + 1);
-    return newPageId;
-  }
 
   // 페이지 패널
   const pageEditPanelPropsData: EditPanelProps = {
@@ -32,12 +26,11 @@ export default function RightNav() {
           text: '빈 화면',
           class: 'page blank-btn',
           onClick: () => {
-            getNewId();
             dispatch(
               addPage({
-                pageType: 'EmptyPage',
-                pageId: getNewId(),
-                pageContents: [{ compoType: '' }],
+                id: getNewId(appPageList, 'page'),
+                startType: 'EmptyPage',
+                compoList: [{ id: 'c1', type: '' }],
               }),
             );
           },
@@ -48,9 +41,9 @@ export default function RightNav() {
           onClick: () => {
             dispatch(
               addPage({
-                pageType: 'AppBarPage',
-                pageId: getNewId(),
-                pageContents: [{ compoType: '' }],
+                id: getNewId(appPageList, 'page'),
+                startType: 'AppBarPage',
+                compoList: [{ id: 'c1', type: '' }],
               }),
             );
           },
@@ -61,9 +54,9 @@ export default function RightNav() {
           onClick: () => {
             dispatch(
               addPage({
-                pageType: 'FormPage',
-                pageId: getNewId(),
-                pageContents: [{ compoType: '' }],
+                id: getNewId(appPageList, 'page'),
+                startType: 'FormPage',
+                compoList: [{ id: 'c1', type: '' }],
               }),
             );
           },
@@ -74,9 +67,9 @@ export default function RightNav() {
           onClick: () => {
             dispatch(
               addPage({
-                pageType: 'CardListPage',
-                pageId: getNewId(),
-                pageContents: [{ compoType: '' }],
+                id: getNewId(appPageList, 'page'),
+                startType: 'CardListPage',
+                compoList: [{ id: 'c1', type: '' }],
               }),
             );
           },
