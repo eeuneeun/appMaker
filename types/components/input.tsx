@@ -1,5 +1,5 @@
 export interface InputAttrs {
-  id: string;
+  id?: string;
   class?: string;
   type: string;
   placeholder?: string;

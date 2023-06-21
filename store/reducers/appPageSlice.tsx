@@ -23,7 +23,7 @@ export interface AppPageState {
 
 export interface AddCompoInfo {
   id: string;
-  CompoInfo: CompoInfo;
+  compoInfo: CompoInfo;
 }
 
 const initialState: AppPageState = {
@@ -63,8 +63,8 @@ export const appPageSlice = createSlice({
         (item) => item.id === action.payload.id,
       );
       state.appPageList[targetIdx].compoList.push({
-        id: action.payload.CompoInfo.id,
-        type: action.payload.CompoInfo.type,
+        id: action.payload.compoInfo.id,
+        type: action.payload.compoInfo.type,
       });
     },
     setNowEditPage: (state: AppPageState, action: PayloadAction<string>) => {

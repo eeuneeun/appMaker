@@ -8,6 +8,7 @@ import { imgCardArrProps } from 'types/components/edit';
 import { useAppDispatch } from 'store/storeHooks';
 import { useSelector } from 'react-redux';
 import {
+  AddCompoInfo,
   AppPageInfo,
   CompoInfo,
   addComponent,
@@ -19,39 +20,43 @@ import {
 } from 'components/utils/utilFunctions';
 import { renderCompoForAdd } from './compoForAdd';
 
+// # 하위 컴포넌트 추가 함수
+function addComponents(
+  e: React.DragEvent<HTMLDivElement>,
+  appPageList: [AppPageInfo],
+): AddCompoInfo {
+  const targetPageId = e.currentTarget.parentElement?.parentElement
+    ?.id as string;
+
+  const compoType = dropHandler(e);
+  const compoInfo = {
+    id: getNewId(appPageList, 'components', targetPageId),
+    type: compoType,
+  };
+
+  return {
+    id: targetPageId,
+    compoInfo: compoInfo,
+  };
+}
+
 // # 기본 페이지
 // @ 포함 요소 : 기본 틀 + 상단 앱 바 + 하단 메뉴 바
-function DefaultPage(pageIdx: number) {
+function DefaultPage(appPageList: [AppPageInfo], pageIdx: number) {
   const dispatch = useAppDispatch();
-  const { appPageList } = useSelector((state: any) => ({
-    appPageList: state.appPageSlice.appPageList,
-  }));
-
-  // # 하위 컴포넌트 추가 함수
-  function addComponents(e: React.DragEvent<HTMLDivElement>) {
-    const targetPageId = e.currentTarget.parentElement?.parentElement
-      ?.id as string;
-
-    const compoType = dropHandler(e);
-    const CompoInfo = {
-      id: getNewId(appPageList, 'components', targetPageId),
-      type: compoType,
-    };
-
-    dispatch(
-      addComponent({
-        id: targetPageId,
-        CompoInfo: CompoInfo,
-      }),
-    );
-  }
 
   return (
     <div className="app dragable">
       {/* <renderHeaderForAdd  /> */}
       <DefaultAppBar />
       <DefaultNavMenu />
-      <div className="container" onDragOver={allowDrop} onDrop={addComponents}>
+      <div
+        className="container"
+        onDragOver={allowDrop}
+        onDrop={(e: React.DragEvent<HTMLDivElement>) =>
+          dispatch(addComponent(addComponents(e, appPageList)))
+        }
+      >
         {appPageList[pageIdx].compoList.map(
           (component: CompoInfo, compoIdx: number) => {
             const el = renderCompoForAdd(component.type);
@@ -66,24 +71,55 @@ function DefaultPage(pageIdx: number) {
 
 // # 빈 화면
 // @ 포함 요소 : 기본 틀
-function EmptyPage() {
-  return <div className="app dragable"></div>;
+function EmptyPage(appPageList: [AppPageInfo], pageIdx: number) {
+  const dispatch = useAppDispatch();
+  return (
+    <div
+      className="app dragable"
+      onDragOver={allowDrop}
+      onDrop={(e: React.DragEvent<HTMLDivElement>) =>
+        dispatch(addComponent(addComponents(e, appPageList)))
+      }
+    >
+      {appPageList[pageIdx].compoList.map(
+        (component: CompoInfo, compoIdx: number) => {
+          const el = renderCompoForAdd(component.type);
+          return el;
+        },
+      )}
+    </div>
+  );
 }
 
 // # 상단 앱 바
 // @ 포함 요소 : 기본 틀 + 상단 앱 바
-function AppBarPage() {
+function AppBarPage(appPageList: [AppPageInfo], pageIdx: number) {
+  const dispatch = useAppDispatch();
   return (
     <div className="app dragable">
       <DefaultAppBar />
-      <div className="container"></div>
+      <div
+        className="container"
+        onDragOver={allowDrop}
+        onDrop={(e: React.DragEvent<HTMLDivElement>) =>
+          dispatch(addComponent(addComponents(e, appPageList)))
+        }
+      >
+        {appPageList[pageIdx].compoList.map(
+          (component: CompoInfo, compoIdx: number) => {
+            const el = renderCompoForAdd(component.type);
+            return el;
+          },
+        )}
+      </div>
     </div>
   );
 }
 
 // # 기본 폼 화면
 // @ 포함 요소 : 기본 틀 + 상단 앱 바 + 기본 폼
-function FormPage() {
+function FormPage(appPageList: [AppPageInfo], pageIdx: number) {
+  const dispatch = useAppDispatch();
   const inputAttrs: InputWithLabelArr = {
     items: [
       {
@@ -118,8 +154,20 @@ function FormPage() {
   return (
     <div className="app dragable">
       <DefaultAppBar />
-      <div className="container">
+      <div
+        className="container"
+        onDragOver={allowDrop}
+        onDrop={(e: React.DragEvent<HTMLDivElement>) =>
+          dispatch(addComponent(addComponents(e, appPageList)))
+        }
+      >
         <DefaultForm {...inputAttrs} />
+        {appPageList[pageIdx].compoList.map(
+          (component: CompoInfo, compoIdx: number) => {
+            const el = renderCompoForAdd(component.type);
+            return el;
+          },
+        )}
       </div>
     </div>
   );
@@ -127,7 +175,8 @@ function FormPage() {
 
 // # 타일 리스트 화면
 // @ 포함 요소 : 기본 틀 + 상단 앱 바 + 타일 리스트
-function CardListPage() {
+function CardListPage(appPageList: [AppPageInfo], pageIdx: number) {
+  const dispatch = useAppDispatch();
   const imgCardArr: imgCardArrProps = {
     items: [
       { text: '텍스트', hrefUrl: '#', class: 'img-card01' },
@@ -136,35 +185,52 @@ function CardListPage() {
       { text: '텍스트', hrefUrl: '#', class: 'img-card04' },
     ],
   };
+
   return (
     <div className="app dragable">
       <DefaultAppBar />
-      <div className="container">
+      <div
+        className="container"
+        onDragOver={allowDrop}
+        onDrop={(e: React.DragEvent<HTMLDivElement>) =>
+          dispatch(addComponent(addComponents(e, appPageList)))
+        }
+      >
         <ImgCardList {...imgCardArr} />
+        {appPageList[pageIdx].compoList.map(
+          (component: CompoInfo, compoIdx: number) => {
+            const el = renderCompoForAdd(component.type);
+            return el;
+          },
+        )}
       </div>
     </div>
   );
 }
 
-function renderPageForAdd(pageName: string, idx: number) {
+function renderPageForAdd(
+  appPageList: [AppPageInfo],
+  pageName: string,
+  idx: number,
+) {
   switch (pageName) {
     case 'DefaultPage':
-      return DefaultPage(idx);
+      return DefaultPage(appPageList, idx);
 
     case 'EmptyPage':
-      return <EmptyPage />;
+      return EmptyPage(appPageList, idx);
 
     case 'AppBarPage':
-      return <AppBarPage />;
+      return AppBarPage(appPageList, idx);
 
     case 'FormPage':
-      return <FormPage />;
+      return FormPage(appPageList, idx);
 
     case 'CardListPage':
-      return <CardListPage />;
+      return CardListPage(appPageList, idx);
 
     default:
-      return DefaultPage(idx);
+      return DefaultPage(appPageList, idx);
   }
 }
 

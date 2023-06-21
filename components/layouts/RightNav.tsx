@@ -30,7 +30,7 @@ export default function RightNav() {
               addPage({
                 id: getNewId(appPageList, 'page'),
                 startType: 'EmptyPage',
-                compoList: [{ id: 'c1', type: '' }],
+                compoList: [{ id: 'c1', type: 'Text' }],
               }),
             );
           },
@@ -43,7 +43,7 @@ export default function RightNav() {
               addPage({
                 id: getNewId(appPageList, 'page'),
                 startType: 'AppBarPage',
-                compoList: [{ id: 'c1', type: '' }],
+                compoList: [{ id: 'c1', type: 'Text' }],
               }),
             );
           },
@@ -56,7 +56,7 @@ export default function RightNav() {
               addPage({
                 id: getNewId(appPageList, 'page'),
                 startType: 'FormPage',
-                compoList: [{ id: 'c1', type: '' }],
+                compoList: [{ id: 'c1', type: 'Text' }],
               }),
             );
           },
@@ -69,7 +69,7 @@ export default function RightNav() {
               addPage({
                 id: getNewId(appPageList, 'page'),
                 startType: 'CardListPage',
-                compoList: [{ id: 'c1', type: '' }],
+                compoList: [{ id: 'c1', type: 'Text' }],
               }),
             );
           },

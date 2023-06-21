@@ -28,7 +28,7 @@ export default function Page() {
   return (
     <div className="main pageWrap">
       {appPageList.map((item: AppPageInfo, idx: number) => {
-        const el = renderPageForAdd(item.startType, idx);
+        const el = renderPageForAdd(appPageList, item.startType, idx);
         return (
           <div
             id={item.id}
