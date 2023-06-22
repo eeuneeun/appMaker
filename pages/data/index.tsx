@@ -1,7 +1,10 @@
+import 'react-data-grid/lib/styles.css';
+import { DefaultDT } from 'components/UI/templates/DataGrid';
+
 export default function Home() {
   return (
     <main className="main data">
-      <a href="/">데이터 기능 개발중</a>
+      <DefaultDT />
     </main>
   );
 }

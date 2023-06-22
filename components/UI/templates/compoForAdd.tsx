@@ -4,7 +4,6 @@ import { imgCardArrProps } from 'types/components/edit';
 import Button from '../atoms/Buttons';
 import { ImgCardList } from '../organisms/Lists';
 import DefaultTextInput from '../atoms/TextInputs';
-import { AppPageInfo } from 'store/reducers/appPageSlice';
 
 // @ 포함 요소 : div 태그
 function DefaultDiv() {

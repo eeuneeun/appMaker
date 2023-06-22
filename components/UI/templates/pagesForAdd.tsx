@@ -6,7 +6,6 @@ import { InputWithLabelArr } from 'types/components/input';
 import { ImgCardList } from '../organisms/Lists';
 import { imgCardArrProps } from 'types/components/edit';
 import { useAppDispatch } from 'store/storeHooks';
-import { useSelector } from 'react-redux';
 import {
   AddCompoInfo,
   AppPageInfo,
@@ -18,7 +17,7 @@ import {
   dropHandler,
   getNewId,
 } from 'components/utils/utilFunctions';
-import { renderCompoForAdd } from './compoForAdd';
+import { renderCompoForAdd } from './CompoForAdd';
 
 // # 하위 컴포넌트 추가 함수
 function addComponents(
