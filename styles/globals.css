@@ -59,6 +59,16 @@
 **************************/
 .main {width: calc(100% - 405px); left: 55px; height: calc(100% - 50px); position: absolute; top: 50px;} 
       .leftnav-open+.leftnav+.rightnav+.main{ width: calc(100% - 480px);  left: 130px;  }
+      
+.main.intro{padding: 20px;}
+      .project-group{width: 100%; padding: 10px 0;}
+            .project-group h3{width: 100%; font-size: 22px; position: relative; padding-left: 15px; font-weight: 600; color: #2e2e2e;}
+            .project-group h3::before{content: '';display: inline-block; position: absolute; left: 0; top: 10%; width: 5px; height: 80%; background: #2e2e2e; }
+            
+            .project-group ul{width: 100%; display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; gap: 20px; padding: 20px 0;}
+                  .project-group ul li{width: 150px; height: 200px; border: 1px solid #eee; box-shadow:  1px 1px 5px 2px #b7b7b733; border-radius: 10px;}
+                  .project-group ul li:hover{box-shadow:  1px 1px 15px 3px #27272733;}
+                        .project-group ul li a{display: flex; width: 100px; height: 100%; align-items: center; justify-content: center;}
 
 /*************************
  
