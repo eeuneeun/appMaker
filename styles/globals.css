@@ -66,9 +66,15 @@
             .project-group h3::before{content: '';display: inline-block; position: absolute; left: 0; top: 10%; width: 5px; height: 80%; background: #2e2e2e; }
             
             .project-group ul{width: 100%; display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; gap: 20px; padding: 20px 0;}
-                  .project-group ul li{width: 150px; height: 200px; border: 1px solid #eee; box-shadow:  1px 1px 5px 2px #b7b7b733; border-radius: 10px;}
+                  .project-group ul li{width: 250px;  border: 1px solid #eee; box-shadow:  1px 1px 5px 2px #b7b7b733; border-radius: 10px;}
                   .project-group ul li:hover{box-shadow:  1px 1px 15px 3px #27272733;}
-                        .project-group ul li a{display: flex; width: 100px; height: 100%; align-items: center; justify-content: center;}
+                        .project-group ul li a{display: flex; width: 100%; height: 100%; align-items: center; justify-content: center;}
+
+      .panel{width: 100%; height: 100%;}
+            .panel-header{width: 100%; font-weight: 600; font-size: 22px;padding: 15px; border-bottom: 1px solid #eee;}
+            .panel-container{width: 100%;padding: 15px;}
+
+
 
 /*************************
  

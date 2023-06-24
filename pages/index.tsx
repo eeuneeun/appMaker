@@ -8,31 +8,35 @@ export default function Home() {
         <ul>
           <li>
             <a href="">
-              <div>
-                <h4>App 01</h4>
-                <dl>
-                  <dt>보유 페이지</dt>
-                  <dd>6개</dd>
-                </dl>
-                <dl>
-                  <dt>마지막 수정 시간</dt>
-                  <dd>12:00:00</dd>
-                </dl>
+              <div className="panel">
+                <h4 className="panel-header">App 01</h4>
+                <div className="panel-container">
+                  <dl>
+                    <dt>보유 페이지</dt>
+                    <dd>6개</dd>
+                  </dl>
+                  <dl>
+                    <dt>마지막 수정 시간</dt>
+                    <dd>12:00:00</dd>
+                  </dl>
+                </div>
               </div>
             </a>
           </li>
           <li>
             <a href="">
-              <div>
-                <h4>App 02</h4>
-                <dl>
-                  <dt>보유 페이지</dt>
-                  <dd>6개</dd>
-                </dl>
-                <dl>
-                  <dt>마지막 수정 시간</dt>
-                  <dd>12:00:00</dd>
-                </dl>
+              <div className="panel">
+                <h4 className="panel-header">App 02</h4>
+                <div className="panel-container">
+                  <dl>
+                    <dt>보유 페이지</dt>
+                    <dd>6개</dd>
+                  </dl>
+                  <dl>
+                    <dt>마지막 수정 시간</dt>
+                    <dd>12:00:00</dd>
+                  </dl>
+                </div>
               </div>
             </a>
           </li>
@@ -44,39 +48,43 @@ export default function Home() {
         <ul>
           <li>
             <a href="">
-              <div>
-                <h4>App 01</h4>
-                <dl>
-                  <dt>서버 상태</dt>
-                  <dd>원활</dd>
-                </dl>
-                <dl>
-                  <dt>보유 페이지</dt>
-                  <dd>6개</dd>
-                </dl>
-                <dl>
-                  <dt>마지막 배포 시각</dt>
-                  <dd>12:00:00</dd>
-                </dl>
+              <div className="panel">
+                <h4 className="panel-header">App 01</h4>
+                <div className="panel-container">
+                  <dl>
+                    <dt>서버 상태</dt>
+                    <dd>원활</dd>
+                  </dl>
+                  <dl>
+                    <dt>보유 페이지</dt>
+                    <dd>6개</dd>
+                  </dl>
+                  <dl>
+                    <dt>마지막 배포 시각</dt>
+                    <dd>12:00:00</dd>
+                  </dl>
+                </div>
               </div>
             </a>
           </li>
           <li>
             <a href="">
-              <div>
-                <h4>App 02</h4>
-                <dl>
-                  <dt>서버 상태</dt>
-                  <dd>원활</dd>
-                </dl>
-                <dl>
-                  <dt>보유 페이지</dt>
-                  <dd>6개</dd>
-                </dl>
-                <dl>
-                  <dt>마지막 배포 시각</dt>
-                  <dd>12:00:00</dd>
-                </dl>
+              <div className="panel">
+                <h4 className="panel-header">App 02</h4>
+                <div className="panel-container">
+                  <dl>
+                    <dt>서버 상태</dt>
+                    <dd>원활</dd>
+                  </dl>
+                  <dl>
+                    <dt>보유 페이지</dt>
+                    <dd>6개</dd>
+                  </dl>
+                  <dl>
+                    <dt>마지막 배포 시각</dt>
+                    <dd>12:00:00</dd>
+                  </dl>
+                </div>
               </div>
             </a>
           </li>
