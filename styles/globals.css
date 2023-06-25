@@ -31,7 +31,7 @@
 
 **************************/
 /* header */
-.header { width: 100%; height: 50px; position: absolute; top: 0; left: 0; background: #06358d; padding: 0 15px; display: flex; align-items: center; justify-content: space-between;} 
+.header { width: 100%; height: 50px; position: absolute; top: 0; left: 0; background: #246cca; padding: 0 15px; display: flex; align-items: center; justify-content: space-between;} 
   .header a { color: #fff; font-weight: 600; font-size: 20px; } 
   
     .header .signin-link{font-weight:400; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 5px;} 
@@ -65,14 +65,22 @@
             .project-group h3{width: 100%; font-size: 22px; position: relative; padding-left: 15px; font-weight: 600; color: #2e2e2e;}
             .project-group h3::before{content: '';display: inline-block; position: absolute; left: 0; top: 10%; width: 5px; height: 80%; background: #2e2e2e; }
             
-            .project-group ul{width: 100%; display: flex; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; gap: 20px; padding: 20px 0;}
-                  .project-group ul li{width: 250px;  border: 1px solid #eee; box-shadow:  1px 1px 5px 2px #b7b7b733; border-radius: 10px;}
+            .project-group ul{width: 100%; display: flex; align-items: stretch; justify-content: flex-start; gap: 20px; padding: 20px 0; }
+                  .project-group ul li{width: 340px; min-height: 160px; border: 1px solid #eee; box-shadow:  1px 1px 5px 2px #b7b7b733; border-radius: 10px;}
                   .project-group ul li:hover{box-shadow:  1px 1px 15px 3px #27272733;}
                         .project-group ul li a{display: flex; width: 100%; height: 100%; align-items: center; justify-content: center;}
 
-      .panel{width: 100%; height: 100%;}
-            .panel-header{width: 100%; font-weight: 600; font-size: 22px;padding: 15px; border-bottom: 1px solid #eee;}
-            .panel-container{width: 100%;padding: 15px;}
+                        .project-group ul li a .panel-header{padding-left: 20px;}
+                        
+                        .project-group ul li a .panel-container{padding: 10px 15px;}
+                        .project-group ul li a .panel-container dl{display: flex; width: 100%;align-items: center; justify-content: flex-start; padding: 5px 0;}
+                              .project-group ul li a .panel-container dl dt{width: 50%; font-size: 17px; color: #000;}
+                              .project-group ul li a .panel-container dl dd{width: 50%; font-size: 17px; color: #333;}
+
+/* panel */
+.panel{width: 100%; height: 100%;}
+      .panel-header{width: 100%; font-weight: 600; font-size: 22px;padding: 15px; border-bottom: 1px solid #eee;}
+      .panel-container{width: 100%;padding: 20px 15px;}
 
 
 
@@ -94,8 +102,8 @@
       2. menu : data
 
 ***************************/
-.data { display: flex; align-items: center; justify-content: center; } 
-
+.data { display: flex; align-items: center; justify-content: center; position: relative; padding: 20px;} 
+      .data .add-table-btn{position: absolute; top: 20px; left: 20px;}
 /**************************
  
       3. menu : setting

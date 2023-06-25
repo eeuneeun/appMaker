@@ -4,6 +4,7 @@ import { HYDRATE } from 'next-redux-wrapper';
 import userSlice from './reducers/userSlice';
 import authSlice from './reducers/authSlice';
 import appPageSlice from './reducers/appPageSlice';
+import dataTableSlice from './reducers/dataTableSlice';
 
 const rootReducer = (state: any, action: AnyAction): CombinedState<any> => {
   switch (action.type) {
@@ -14,6 +15,7 @@ const rootReducer = (state: any, action: AnyAction): CombinedState<any> => {
         userSlice,
         authSlice,
         appPageSlice,
+        dataTableSlice,
       });
       return combinedReducer(state, action);
     }

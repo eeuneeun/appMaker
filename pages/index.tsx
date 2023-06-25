@@ -17,7 +17,7 @@ export default function Home() {
                   </dl>
                   <dl>
                     <dt>마지막 수정 시간</dt>
-                    <dd>12:00:00</dd>
+                    <dd>2023-06-25 12:00:00</dd>
                   </dl>
                 </div>
               </div>
@@ -34,7 +34,7 @@ export default function Home() {
                   </dl>
                   <dl>
                     <dt>마지막 수정 시간</dt>
-                    <dd>12:00:00</dd>
+                    <dd>2023-06-25 12:00:00</dd>
                   </dl>
                 </div>
               </div>
@@ -61,7 +61,7 @@ export default function Home() {
                   </dl>
                   <dl>
                     <dt>마지막 배포 시각</dt>
-                    <dd>12:00:00</dd>
+                    <dd>2023-06-25 12:00:00</dd>
                   </dl>
                 </div>
               </div>
@@ -82,7 +82,7 @@ export default function Home() {
                   </dl>
                   <dl>
                     <dt>마지막 배포 시각</dt>
-                    <dd>12:00:00</dd>
+                    <dd>2023-06-25 12:00:00</dd>
                   </dl>
                 </div>
               </div>

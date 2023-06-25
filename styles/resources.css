@@ -220,6 +220,9 @@
 .expand-btn { background: url(/imgs/expand-arrow.svg) no-repeat center; transform: rotate(0deg); } 
 .active .expand-btn { transform: rotate(90deg) !important; } 
 
+.add-table-btn{width: 70px; height: 70px;border-radius: 50%; background: #246cca; color: #fff; }
+
+
 /* 2-2. custom default tag */
 .tag { 
  color: #fff; 
