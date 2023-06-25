@@ -1,5 +1,3 @@
-import ProgressBar, { Breadcrumb } from 'components/UI/organisms/Bar';
-
 export default function Home() {
   return (
     <main className="main intro">

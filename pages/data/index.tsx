@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <main className="main data">
       <button className="add-table-btn">
-        <LibraryAddIcon sx={{ fontSize: 33 }} />
+        <LibraryAddIcon sx={{ fontSize: 24 }} />
       </button>
       <DefaultDT {...DTProps} />
     </main>
