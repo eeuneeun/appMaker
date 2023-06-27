@@ -123,28 +123,28 @@ function FormPage(appPageList: [AppPageInfo], pageIdx: number) {
     items: [
       {
         input: {
-          id: 'input01',
+          id: 'id',
           class: 'basic input',
           type: 'text',
-          placeholder: 'basic input',
+          placeholder: 'id',
         },
         label: {
-          for: 'input01',
+          for: 'id',
           class: '',
-          text: '입력폼 01',
+          text: '아이디',
         },
       },
       {
         input: {
-          id: 'input02',
+          id: 'password',
           class: 'basic input',
-          type: 'text',
-          placeholder: 'basic input',
+          type: 'password',
+          placeholder: '********',
         },
         label: {
-          for: 'input02',
+          for: 'password',
           class: '',
-          text: '입력폼 02',
+          text: '패스워드',
         },
       },
     ],

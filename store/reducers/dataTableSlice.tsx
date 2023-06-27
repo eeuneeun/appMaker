@@ -3,17 +3,16 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from 'store/storeConfig';
 import { getIdxOfArr } from 'components/utils/utilFunctions';
 
+
+export interface colsInfo {
+  key: string,
+  name: string
+}
 export interface DataTableInfo {
   id: string;
-  startType: string;
-  header?: string;
-  footer?: string;
-  compoList: [CompoInfo];
-}
-
-export interface CompoInfo {
-  id: string;
-  type: string;
+  tableName: string;
+  cols: colsInfo[];
+  rows: any;
 }
 
 export interface dataTableState {
@@ -21,48 +20,39 @@ export interface dataTableState {
   nowEditPage: string;
 }
 
-export interface AddCompoInfo {
-  id: string;
-  compoInfo: CompoInfo;
-}
-
 const initialState: dataTableState = {
   dataTableList: [
     {
       id: 'p1',
-      startType: 'DefaultPage',
-      header: 'DefaultAppBar',
-      footer: 'DefaultNavMenu',
-      compoList: [{ id: 'c1', type: 'div' }],
+      tableName: 'default',
+      cols: [
+        { key: 'id', name: 'ID' },
+        { key: 'name', name: 'name' },
+        { key: 'title', name: 'Title' }
+      ],
+      rows: [
+        { id: 0, name: 'aa', title: 'Example' },
+        { id: 1, name: 'aa', title: 'Demo' }
+      ]
     },
   ],
   nowEditPage: 'p1',
 };
 
 export const dataTableSlice = createSlice({
-  name: 'appPage',
+  name: 'dataTable',
   initialState,
   reducers: {
     addTable: (state: dataTableState, action: PayloadAction<DataTableInfo>) => {
       state.dataTableList.push(action.payload);
     },
     deleteTable: (state: dataTableState, action: PayloadAction<string>) => {
-      if (state.dataTableList.length > 1) {
-        const targetIdx = getIdxOfArr(state.dataTableList, action.payload);
+      console.log(action.payload);
 
-        state.dataTableList.splice(targetIdx, 1);
-      } else {
-        return alert('최소한 하나의 페이지가 필요합니다!');
-      }
     },
-    saveData: (state: dataTableState, action: PayloadAction<AddCompoInfo>) => {
-      const targetIdx = state.dataTableList.findIndex(
-        (item) => item.id === action.payload.id,
-      );
-      state.dataTableList[targetIdx].compoList.push({
-        id: action.payload.compoInfo.id,
-        type: action.payload.compoInfo.type,
-      });
+    saveData: (state: dataTableState, action: PayloadAction<string>) => {
+      console.log(action.payload);
+
     },
   },
   extraReducers: {
