@@ -1,4 +1,4 @@
-import { renderPageForAdd } from 'components/UI/templates/PagesForAdd';
+import { renderPageForAdd } from 'components/UI/templates/pagesForAdd';
 import { useSelector } from 'react-redux';
 import {
   AppPageInfo,
