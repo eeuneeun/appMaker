@@ -5,8 +5,6 @@ export interface LoginFormData {
   password: InputWithLabel;
   submitBtn: SubmitBtn;
 }
-asdasdsad;
 // export interface LoginTryFunc {
 //   (id: string, password: string): boolean;
 // }
-asdasdadad;
