@@ -24,7 +24,8 @@
     "type-check:watch": "tsc --noEmit --watch",
     "test": "echo \"Write tests!\" && exit 0",
     "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable"
+    "postpublish": "pinst --enable",
+    "prepare": "husky"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
