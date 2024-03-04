@@ -9,3 +9,4 @@ asdasdsad;
 // export interface LoginTryFunc {
 //   (id: string, password: string): boolean;
 // }
+asdasdadad;
