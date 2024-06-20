@@ -4,8 +4,7 @@ import { imgCard } from 'types/components/edit';
 
 export function DefaultImgCard(props: imgCard) {
   return (
-    <Link href={props.hrefUrl}>
-      <a id={props.id} className={`img-card ${props.class}`}>
+    <Link href={props.hrefUrl} id={props.id} className={`img-card ${props.class}`}>
         {props.imgUrl ? (
           <img src={props.imgUrl} alt={props.imgAlt} />
         ) : (
@@ -14,7 +13,6 @@ export function DefaultImgCard(props: imgCard) {
           </div>
         )}
         <span>{props.text}</span>
-      </a>
     </Link>
   );
 }

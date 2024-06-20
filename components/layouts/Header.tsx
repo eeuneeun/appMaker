@@ -26,15 +26,13 @@ export default function Header() {
 
       <div>
         {isLogin ? (
-          <Link href={'/signin/'}>
-            <a className="signin-link">
+          <Link href={'/signin/'} className="signin-link">
               로그아웃
               <LogoutIcon />
-            </a>
           </Link>
         ) : (
-          <Link href={'/signin/'}>
-            <a className="signin-link">로그인</a>
+          <Link href={'/signin/'} className="signin-link">
+            로그인
           </Link>
         )}
       </div>
